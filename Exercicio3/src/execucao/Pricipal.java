@@ -26,6 +26,8 @@ public class Pricipal {
         }while(JOptionPane.showConfirmDialog(null, "Continuar?","Adicionar mais cômodos?",JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION);
         for(Comodos c:residencia.getComodos()){
             System.out.println(c.toString());
+            System.out.println(c.lampadasNecessarias(potencia));
+            System.out.println(c.potenciaNecessaria());
             }
     }
     
