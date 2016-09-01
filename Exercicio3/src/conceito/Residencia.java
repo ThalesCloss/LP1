@@ -29,6 +29,7 @@ public class Residencia {
         for(Comodos tmp: comodos){
             total+=tmp.lampadasNecessarias(potenciaLampada);
         }
+        System.out.println("Número total de lâmpadas necessárias "+total);
         return total;
     }
     
@@ -37,11 +38,20 @@ public class Residencia {
         for(Comodos tmp: comodos){
             potencia+=tmp.potenciaNecessaria();
         }
+        System.out.println("Potência total necessária "+potencia);
         return potencia;
     }
     
     public List<Comodos> getComodos(){
         return comodos;
+    }
+    
+    public void informacoesComodos(){
+        for(Comodos c:comodos){
+            System.out.println(c.toString());
+            System.out.println("Potência necessária: "+ c.potenciaNecessaria()+"/ potência da lâmpada "+potenciaLampada);
+            System.out.println("Lâmpadas necessárias: "+c.lampadasNecessarias(potenciaLampada));
+            }
     }
     
 }

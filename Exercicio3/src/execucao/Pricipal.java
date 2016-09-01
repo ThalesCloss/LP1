@@ -21,14 +21,14 @@ public class Pricipal {
         
         do{
             residencia.adicionarComodo(new Comodos((TiposComodos) JOptionPane.showInputDialog(null, "Comodo", "Tipo do comodo?",JOptionPane.QUESTION_MESSAGE,null, TiposComodos.values(), TiposComodos.values()[0]), 
-                                       Integer.parseInt(JOptionPane.showInputDialog(null,"Comprimento do comodo?")), Integer.parseInt(JOptionPane.showInputDialog(null,"Largura do comodo?"))));
+                                       Double.parseDouble(JOptionPane.showInputDialog(null,"Comprimento do comodo?").replace(",", ".")), Double.parseDouble(JOptionPane.showInputDialog(null,"Largura do comodo?").replace(",", "."))));
             
         }while(JOptionPane.showConfirmDialog(null, "Continuar?","Adicionar mais cômodos?",JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION);
-        for(Comodos c:residencia.getComodos()){
-            System.out.println(c.toString());
-            System.out.println(c.lampadasNecessarias(potencia));
-            System.out.println(c.potenciaNecessaria());
-            }
+        
+        residencia.informacoesComodos();
+        residencia.totalPotenciaResidencia();
+        residencia.totalLampadasResidencia();
+        
     }
     
 }
