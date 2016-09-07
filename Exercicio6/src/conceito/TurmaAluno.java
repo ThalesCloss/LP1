@@ -47,7 +47,7 @@ public class TurmaAluno {
         return menor;
     }
     
-    public void mediaTurma(){
+    public double mediaTurma(){
         double media=0;
         for(Aluno a:alunos){
             media+=a.calculaMedia();
@@ -55,9 +55,10 @@ public class TurmaAluno {
         media=media/alunos.size();
         System.out.println("============================");
         System.out.println("Média da turma: "+media);
+        return media;
     }
     
-    public void totalReprovados(){
+    public int totalReprovados(){
         int total=0;
         for(Aluno a:alunos){
             if(!a.aprovado())
@@ -65,9 +66,10 @@ public class TurmaAluno {
         }
         System.out.println("============================");
         System.out.println("Total reprovados: "+total);
+        return total;
     }
     
-    public void percentualReprovadosFalta(){
+    public int percentualReprovadosFalta(){
         int total=0;
         for(Aluno a:alunos){
             if(!a.aprovadoFrequencia())
@@ -75,6 +77,7 @@ public class TurmaAluno {
         }
         System.out.println("============================");
         System.out.println("Percentual reprovados por falta: "+(total*100)/alunos.size());
+        return total;
     }
     public void infoAlunos(){
         for(Aluno a:alunos){

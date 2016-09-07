@@ -13,13 +13,46 @@ import java.util.Objects;
  */
 public class Comodos {
     private TiposComodos tipo;
-    private double comprimento, largura;
+    private double comprimento, largura, potencia;
     
-    public Comodos(TiposComodos tipo,double comprimento, double largura){
+    public Comodos(TiposComodos tipo,double comprimento, double largura, double potencia){
         this.tipo=tipo;
         this.comprimento=comprimento;
         this.largura=largura;
+        this.potencia=potencia;
         
+    }
+
+    public TiposComodos getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TiposComodos tipo) {
+        this.tipo = tipo;
+    }
+
+    public double getComprimento() {
+        return comprimento;
+    }
+
+    public void setComprimento(double comprimento) {
+        this.comprimento = comprimento;
+    }
+
+    public double getLargura() {
+        return largura;
+    }
+
+    public void setLargura(double largura) {
+        this.largura = largura;
+    }
+
+    public double getPotencia() {
+        return potencia;
+    }
+
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
     }
 
     @Override
@@ -57,16 +90,19 @@ public class Comodos {
 
     @Override
     public String toString() {
-        return "Comodo: "+tipo.nome()+" Comprimento:"+comprimento+" Largura:"+largura+" Potência/m²:"+tipo.potencia();
+        return "Cômodo: "+tipo.nome()+"\nComprimento: "+comprimento+"\nLargura: "+largura+"\nPotência/m²:"+tipo.potencia()+"\nÁrea: "+this.calculaArea()+" m²";
     }
     
+    public double calculaArea(){
+        return comprimento*largura;
+    }
     
     public double potenciaNecessaria(){
         return (this.largura*this.comprimento)*this.tipo.potencia();
     }
     
-    public int lampadasNecessarias(int potenciaLampada){
-        return (int) Math.ceil(this.potenciaNecessaria()/potenciaLampada);
+    public int lampadasNecessarias(){
+        return (int) Math.ceil(this.potenciaNecessaria()/this.potencia);
     }
     
 }

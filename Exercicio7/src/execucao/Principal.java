@@ -73,5 +73,6 @@ public class Principal {
             System.out.println("Total consumido: "+consumidor.getQuntidadeKw());
             System.out.println("Valor gasto: "+consumidor.totalPagar());
         }
+        System.exit(0);
     }
 }

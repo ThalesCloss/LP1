@@ -27,34 +27,21 @@ public class PesquisaConcurso {
         return cursos;
     }
     
-    public void infoCursos(){
-        for(Curso c:cursos){
-            System.out.println("===============================");
-            System.out.println("Curso: "+c.getCodigoCurso()+" - "+c.getNomeCurso());
-            System.out.println("Candidatos por vaga: "+c.getCandidatosVaga());
-            System.out.println("% de candidatos masculino: "+c.getPercentualMasculino());
-            System.out.println("% de candidatos feminino: "+c.getPercentualFeminino());
-        }
-    }
     
-    public void cursoMaiorCandidatoVaga(){
+    public Curso cursoMaiorCandidatoVaga(){
         Curso maior = new Curso();
         for(Curso c:cursos){
             if(c.getCandidatosVaga()>maior.getCandidatosVaga())
                 maior=c;
         }
-        System.out.println("===============================");
-        System.out.println("Curso com maior número de candidatos por vaga");
-        System.out.println("Curso: "+maior.getCodigoCurso()+" - "+maior.getNomeCurso());
-        System.out.println("Candidatos por vaga: "+maior.getCandidatosVaga());
+        return maior;
     }
     
-    public void totalCandidatos(){
+    public int totalCandidatos(){
         int total=0;
         for(Curso c:cursos){
             total+=c.getTotalCandidatos();
         }
-        System.out.println("===============================");
-        System.out.println("Total de candidatos: "+total);
+        return total;
     }
 }

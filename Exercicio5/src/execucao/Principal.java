@@ -43,9 +43,24 @@ public class Principal {
         
         pesquisa.adicionarCurso(c3);
         
-        pesquisa.infoCursos();
+        for(Curso c:pesquisa.cursosDisponiveis()){
+            System.out.println("===============================");
+            System.out.println("Curso: "+c.getCodigoCurso()+" - "+c.getNomeCurso());
+            System.out.println("Candidatos por vaga: "+c.getCandidatosVaga());
+            System.out.println("% de candidatos masculino: "+c.getPercentualMasculino());
+            System.out.println("% de candidatos feminino: "+c.getPercentualFeminino());
+        }
         pesquisa.cursoMaiorCandidatoVaga();
         pesquisa.totalCandidatos();
+        
+        Curso maior=pesquisa.cursoMaiorCandidatoVaga();
+        System.out.println("===============================");
+        System.out.println("Curso com maior número de candidatos por vaga");
+        System.out.println("Curso: "+maior.getCodigoCurso()+" - "+maior.getNomeCurso());
+        System.out.println("Candidatos por vaga: "+maior.getCandidatosVaga());
+        
+        System.out.println("===============================");
+        System.out.println("Total de candidatos: "+pesquisa.totalCandidatos());
     }
     
 }

@@ -68,5 +68,6 @@ public class Principal {
         System.out.println("Número de mulheres com menos de 35 anos e experiência de serviço "+consulta.getCandidatosPorFaixaEtaria(consulta.getCandidatosPorExperiencia(consulta.getCandidatosPorSexo(consulta.getCandidatos(), SexoCandidato.FEMININO), true), 0, 34).size());
         System.out.println("Menor idade entre mulheres com experiência de serviço "+consulta.getMenorIdade(consulta.getCandidatosPorExperiencia(consulta.getCandidatosPorSexo(consulta.getCandidatos(), SexoCandidato.FEMININO), true)).getIdade());
         
+        System.exit(0);
     }
 }

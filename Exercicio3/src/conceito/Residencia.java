@@ -15,9 +15,8 @@ import java.util.List;
 public class Residencia {
     private List<Comodos> comodos;
     private int potenciaLampada;
-    public Residencia(int potenciaLampada){
+    public Residencia(){
         comodos=new ArrayList<Comodos>();
-        this.potenciaLampada=potenciaLampada;
     }
     
     public void adicionarComodo(Comodos comodo){
@@ -27,9 +26,9 @@ public class Residencia {
     public int totalLampadasResidencia(){
         int total=0;
         for(Comodos tmp: comodos){
-            total+=tmp.lampadasNecessarias(potenciaLampada);
+            total+=tmp.lampadasNecessarias();
         }
-        System.out.println("Número total de lâmpadas necessárias "+total);
+        
         return total;
     }
     
@@ -38,7 +37,6 @@ public class Residencia {
         for(Comodos tmp: comodos){
             potencia+=tmp.potenciaNecessaria();
         }
-        System.out.println("Potência total necessária "+potencia);
         return potencia;
     }
     
@@ -46,12 +44,6 @@ public class Residencia {
         return comodos;
     }
     
-    public void informacoesComodos(){
-        for(Comodos c:comodos){
-            System.out.println(c.toString());
-            System.out.println("Potência necessária: "+ c.potenciaNecessaria()+"/ potência da lâmpada "+potenciaLampada);
-            System.out.println("Lâmpadas necessárias: "+c.lampadasNecessarias(potenciaLampada));
-            }
-    }
+    
     
 }

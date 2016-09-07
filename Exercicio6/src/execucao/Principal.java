@@ -46,6 +46,8 @@ public class Principal {
         turma.percentualReprovadosFalta();
         turma.totalReprovados();
         turma.infoAlunos();
+        
+        System.exit(0);
     }
     
 }
